@@ -14,9 +14,21 @@
 
 <body>
 <h1>Javascript-Library</h1>
+<form id="form" action="https://httpbin.org/post" method="post">
+  <div>
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" id="first_name">
+  </div>
+
+  <div>
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name" id="last_name">
+  </div>
+</form>
+<button id="btn">NEW BOOK</button>
 <table id="content">
   <tr>
-    <th>Name</th>
+    <th>Title</th>
     <th>Author</th>
     <th>Pages</th>
     <th>Read ?</th>
