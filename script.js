@@ -24,12 +24,16 @@ for (let i = 0; i < myLibrary.length; i++) {
   let item = myLibrary[i];
 
   let row = contentElement.insertRow();
-  var nameCell = row.insertCell();
+
+  let nameCell = row.insertCell();
   nameCell.textContent = item.title;
 
-  var authorCell = row.insertCell();
+  let authorCell = row.insertCell();
   authorCell.textContent = item.author;
 
-  var pagesCell = row.insertCell();
+  let pagesCell = row.insertCell();
   pagesCell.textContent = item.pages;
+
+  let readCell = row.insertCell();
+  readCell.textContent = item.read;
 }
