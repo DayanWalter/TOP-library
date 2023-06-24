@@ -37,3 +37,15 @@ for (let i = 0; i < myLibrary.length; i++) {
   let readCell = row.insertCell();
   readCell.textContent = item.read;
 }
+form.style.display = "none";
+
+const btn = document.getElementById("btn");
+btn.addEventListener("click", () => {
+  const form = document.getElementById("form");
+
+  if(form.style.display === "none"){
+    form.style.display = "block";
+  }else{
+    form.style.display = "none";
+  }
+})
