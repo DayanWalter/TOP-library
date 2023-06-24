@@ -1,3 +1,5 @@
+let myLibrary = [];
+
 function Book(title, author, pages,read) {
   this.title = title
   this.author = author
@@ -6,6 +8,10 @@ function Book(title, author, pages,read) {
   this.info = function(){
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
   }
-  }
+}
 
 const lordOfTheRings = new Book("The Lord of the Rings", "R.R.Tolkien", "1000", "read")
+
+function addBookToLibrary(){
+    
+}
