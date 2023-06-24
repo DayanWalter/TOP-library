@@ -14,6 +14,8 @@
 
 <body>
 <h1>Javascript-Library</h1>
+<button id="btn">NEW BOOK</button>
+<br><br>
 <form id="form" action="https://httpbin.org/post" method="post">
   <div>
     <label for="title">Title:</label>
@@ -28,17 +30,21 @@
     <label for="pages">Pages:</label>
     <input type="text" name="pages" id="pages">
   </div>
-  <div>
-    <label for="read_yes">Yes</label>
-    <input type="radio" id="read_yes" name="read_radio" value="read_yes">
-  </div>
-  <div>
-    <label for="read_no">No</label>
-    <input type="radio" id="read_no" name="read_radio" value="read_no">
-  </div>
-  
+  <fieldset>
+    <legend>Read?</legend>
+      <div>
+        <label for="read_yes">Yes</label>
+        <input type="radio" id="read_yes" name="read_radio" value="read_yes">
+      </div>
+      <div>
+        <label for="read_no">No</label>
+        <input type="radio" id="read_no" name="read_radio" value="read_no">
+      </div>
+  </fieldset>
+  <br>
+  <button type="submit">Submit</button>
 </form>
-<button id="btn">NEW BOOK</button>
+<br>
 <table id="content">
   <tr>
     <th>Title</th>
