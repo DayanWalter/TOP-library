@@ -1,6 +1,9 @@
-let myLibrary = [];
+const lordOfTheRings = new Book("The Lord of the Rings", "R.R.Tolkien", "1000", true)
+const lordOfTheRings2 = new Book("The Lord of the Rings 2", "R.R.Tolkien", "2000", false)
 
-function Book(title, author, pages,read) {
+let myLibrary = [lordOfTheRings, lordOfTheRings2];
+
+function Book(title, author, pages, read) {
   this.title = title
   this.author = author
   this.pages = pages
@@ -10,8 +13,9 @@ function Book(title, author, pages,read) {
   }
 }
 
-const lordOfTheRings = new Book("The Lord of the Rings", "R.R.Tolkien", "1000", "read")
 
-function addBookToLibrary(){
-    
+
+function addBookToLibrary(title, author, pages, read){
+    const bookTitle = new Book(title, author, pages, read)
+    return myLibrary.push(bookTitle)
 }
