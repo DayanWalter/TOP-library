@@ -1,5 +1,5 @@
-const lordOfTheRings = new Book("The Lord of the Rings", "R.R.Tolkien", "1000", true)
-const lordOfTheRings2 = new Book("The Lord of the Rings 2", "R.R.Tolkien", "2000", false)
+const lordOfTheRings = new Book("The Lord of the Rings", "R.R.Tolkien", "1000", "true")
+const lordOfTheRings2 = new Book("The Lord of the Rings 2", "R.R.Tolkien", "2000", "false")
 
 let myLibrary = [lordOfTheRings, lordOfTheRings2];
 
@@ -17,7 +17,7 @@ function addBookToLibrary(title, author, pages, read){
     const bookTitle = new Book(title, author, pages, read)
     return myLibrary.push(bookTitle)
 }
-
+// display the books from the array in a table
 let archiveTable = document.getElementById("archive-table");
 
 for (let i = 0; i < myLibrary.length; i++) {
@@ -50,6 +50,7 @@ btn.addEventListener("click", () => {
     form.style.display = "none";
   }
 })
+
 document.getElementById('form').addEventListener('submit', function(event) {
   event.preventDefault(); 
   
@@ -60,19 +61,22 @@ document.getElementById('form').addEventListener('submit', function(event) {
   let read = document.querySelector('input[name="read_radio"]:checked').value;  
   
   // add newRow to table
-  let archiveTable = document.getElementById('archive-table').getElementsByTagName('tbody')[0];
-  let newRow = archiveTable.insertRow(archiveTable.rows.length);
-  
-  let titleCell = newRow.insertCell(0);
-  let authorCell = newRow.insertCell(1);
-  let pagesCell = newRow.insertCell(2);
-  let readCell = newRow.insertCell(3);
+  let archiveTable = document.getElementById('archive-table');
+
+  let newRow = archiveTable.insertRow();
+
+  let titleCell = newRow.insertCell();
+  let authorCell = newRow.insertCell();
+  let pagesCell = newRow.insertCell();
+  let readCell = newRow.insertCell();
+
 
   titleCell.innerHTML = title;
   authorCell.innerHTML = author;
   pagesCell.innerHTML = pages;
   readCell.innerHTML = read;
-  
+
+  addBookToLibrary(title, author, pages, read);
   // reset form
   document.getElementById('form').reset();
 });
