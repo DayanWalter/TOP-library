@@ -23,18 +23,18 @@ let archiveTable = document.getElementById("archive-table");
 for (let i = 0; i < myLibrary.length; i++) {
   let book = myLibrary[i];
 
-  let row = archiveTable.insertRow();
+  let newRow = archiveTable.insertRow();
 
-  let nameCell = row.insertCell();
-  nameCell.textContent = book.title;
+  let titleCell = newRow.insertCell();
+  titleCell.textContent = book.title;
 
-  let authorCell = row.insertCell();
+  let authorCell = newRow.insertCell();
   authorCell.textContent = book.author;
 
-  let pagesCell = row.insertCell();
+  let pagesCell = newRow.insertCell();
   pagesCell.textContent = book.pages;
 
-  let readCell = row.insertCell();
+  let readCell = newRow.insertCell();
   readCell.textContent = book.read;
 }
 // form.style.display = "none";
@@ -50,6 +50,29 @@ btn.addEventListener("click", () => {
     form.style.display = "none";
   }
 })
-let button = document.getElementById("theButton"),
-value = button.form.valueId.value;
-button.onclick = addBookToLibrary(value)
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+  
+  // Read form-field
+  let title = document.getElementById('title').value;
+  let author = document.getElementById('author').value;
+  let pages = document.getElementById('pages').value;
+  let read = document.querySelector('input[name="read_radio"]:checked').value;  
+  
+  // add newRow to table
+  let archiveTable = document.getElementById('archive-table').getElementsByTagName('tbody')[0];
+  let newRow = archiveTable.insertRow(archiveTable.rows.length);
+  
+  let titleCell = newRow.insertCell(0);
+  let authorCell = newRow.insertCell(1);
+  let pagesCell = newRow.insertCell(2);
+  let readCell = newRow.insertCell(3);
+
+  titleCell.innerHTML = title;
+  authorCell.innerHTML = author;
+  pagesCell.innerHTML = pages;
+  readCell.innerHTML = read;
+  
+  // reset form
+  document.getElementById('form').reset();
+});
