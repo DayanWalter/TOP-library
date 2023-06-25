@@ -35,6 +35,7 @@ for (let i = 0; i < myLibrary.length; i++) {
   let readCell = newRow.insertCell();
   readCell.textContent = book.read;
 }
+
 addForm.style.display = "none";
 
 // toggle Button for the "NEW BOOK"-Form
@@ -57,7 +58,7 @@ document.getElementById('addForm').addEventListener('submit', function(event) {
   let author = document.getElementById('author').value;
   let pages = document.getElementById('pages').value;
   let read = document.querySelector('input[name="read_radio"]:checked').value;
-  let index = myLibrary.length;
+  let index = myLibrary.length +1;
 
   // add newRow to table
   let archiveTable = document.getElementById('archive-table');
@@ -79,7 +80,7 @@ document.getElementById('addForm').addEventListener('submit', function(event) {
   addBookToLibrary(title, author, pages, read);
 
   // reset form
-  document.getElementById('form').reset();
+  document.getElementById('addForm').reset();
 });
 
 addForm.style.display = "none";
@@ -95,3 +96,17 @@ deleteButton.addEventListener("click", () => {
     form.style.display = "none";
   }
 })
+document.getElementById('deleteForm').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+  
+  // Read form-field
+  let index = document.getElementById('deleteIndex').value;
+
+  // delete Row from table
+  let archiveTable = document.getElementById('archive-table');
+
+  archiveTable.deleteRow(index);
+
+  // reset form
+  document.getElementById('deleteForm').reset();
+});

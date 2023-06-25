@@ -42,7 +42,7 @@
       </div>
   </fieldset>
   <br>
-  <button id="submitButton">Submit</button>
+  <button id="addBookButton">Add Book</button>
 </form>
 <br>
 <table id="archive-table">
@@ -58,9 +58,10 @@
   <button id="deleteButton">DELETE BOOK</button>
 <form id="deleteForm" action="https://httpbin.org/post" method="post">
   <div>
-    <label for="deleteIndex">Delete Index:</label>
-    <input type="text" id="deleteIndex" name="deleteIndex">
+    <label for="deleteIndex">Index:</label>
+    <input type="number" id="deleteIndex" name="deleteIndex">
   </div>
+  <button id="deleteBookButton">DELETE</button>
 </form>
   <script src="script.js"></script>
 </body>
