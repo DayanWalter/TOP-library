@@ -1,17 +1,15 @@
-const lordOfTheRings = new Book("The Lord of the Rings", "R.R.Tolkien", "1000", "true")
-const lordOfTheRings2 = new Book("The Lord of the Rings 2", "R.R.Tolkien", "2000", "false")
-
-let myLibrary = [lordOfTheRings, lordOfTheRings2];
-
 function Book(title, author, pages, read) {
   this.title = title
   this.author = author
   this.pages = pages
   this.read = read
+  this.index = myLibrary.length;
   this.info = function(){
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
   }
 }
+let myLibrary = [];
+
 // function for adding a book-object to the library-array
 function addBookToLibrary(title, author, pages, read){
     const bookTitle = new Book(title, author, pages, read)
@@ -40,7 +38,7 @@ for (let i = 0; i < myLibrary.length; i++) {
 // form.style.display = "none";
 
 // toggle Button for the "NEW BOOK"-Form
-const btn = document.getElementById("btn");
+const btn = document.getElementById("addButton");
 btn.addEventListener("click", () => {
   const form = document.getElementById("form");
 
@@ -58,8 +56,9 @@ document.getElementById('form').addEventListener('submit', function(event) {
   let title = document.getElementById('title').value;
   let author = document.getElementById('author').value;
   let pages = document.getElementById('pages').value;
-  let read = document.querySelector('input[name="read_radio"]:checked').value;  
-  
+  let read = document.querySelector('input[name="read_radio"]:checked').value;
+  let index = myLibrary.length;
+
   // add newRow to table
   let archiveTable = document.getElementById('archive-table');
 
@@ -69,14 +68,16 @@ document.getElementById('form').addEventListener('submit', function(event) {
   let authorCell = newRow.insertCell();
   let pagesCell = newRow.insertCell();
   let readCell = newRow.insertCell();
-
+  let indexCell = newRow.insertCell();
 
   titleCell.innerHTML = title;
   authorCell.innerHTML = author;
   pagesCell.innerHTML = pages;
   readCell.innerHTML = read;
+  indexCell.innerHTML = index;
 
   addBookToLibrary(title, author, pages, read);
+
   // reset form
   document.getElementById('form').reset();
 });

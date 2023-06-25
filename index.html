@@ -14,7 +14,7 @@
 
 <body>
 <h1>Javascript-Library</h1>
-<button id="btn">NEW BOOK</button>
+<button id="addButton">NEW BOOK</button>
 <br><br>
 <form id="form" action="https://httpbin.org/post" method="post">
   <div>
@@ -42,9 +42,7 @@
       </div>
   </fieldset>
   <br>
-  <!-- <input type="button" id="theButton"/> -->
-
-  <button id="theButton">Submit</button>
+  <button id="submitButton">Submit</button>
 </form>
 <br>
 <table id="archive-table">
@@ -52,9 +50,12 @@
     <th>Title</th>
     <th>Author</th>
     <th>Pages</th>
-    <th>Read ?</th>
+    <th>Read?</th>
+    <th>Index</th>
   </tr>
 </table>
+  <button id="deleteButton">Delete Index</button>
+
   <script src="script.js"></script>
 </body>
 </html>
