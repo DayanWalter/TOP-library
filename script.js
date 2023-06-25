@@ -12,18 +12,18 @@ function Book(title, author, pages, read) {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
   }
 }
-
+// function for adding a book-object to the library-array
 function addBookToLibrary(title, author, pages, read){
     const bookTitle = new Book(title, author, pages, read)
     return myLibrary.push(bookTitle)
 }
 
-let contentElement = document.getElementById("content");
+let archiveTable = document.getElementById("archive-table");
 
 for (let i = 0; i < myLibrary.length; i++) {
   let item = myLibrary[i];
 
-  let row = contentElement.insertRow();
+  let row = archiveTable.insertRow();
 
   let nameCell = row.insertCell();
   nameCell.textContent = item.title;
@@ -39,6 +39,7 @@ for (let i = 0; i < myLibrary.length; i++) {
 }
 // form.style.display = "none";
 
+// toggle Button for the "NEW BOOK"-Form
 const btn = document.getElementById("btn");
 btn.addEventListener("click", () => {
   const form = document.getElementById("form");
@@ -49,3 +50,6 @@ btn.addEventListener("click", () => {
     form.style.display = "none";
   }
 })
+let button = document.getElementById("theButton"),
+value = button.form.valueId.value;
+button.onclick = addBookToLibrary(value)
