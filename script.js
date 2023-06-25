@@ -21,21 +21,21 @@ function addBookToLibrary(title, author, pages, read){
 let archiveTable = document.getElementById("archive-table");
 
 for (let i = 0; i < myLibrary.length; i++) {
-  let item = myLibrary[i];
+  let book = myLibrary[i];
 
   let row = archiveTable.insertRow();
 
   let nameCell = row.insertCell();
-  nameCell.textContent = item.title;
+  nameCell.textContent = book.title;
 
   let authorCell = row.insertCell();
-  authorCell.textContent = item.author;
+  authorCell.textContent = book.author;
 
   let pagesCell = row.insertCell();
-  pagesCell.textContent = item.pages;
+  pagesCell.textContent = book.pages;
 
   let readCell = row.insertCell();
-  readCell.textContent = item.read;
+  readCell.textContent = book.read;
 }
 // form.style.display = "none";
 
