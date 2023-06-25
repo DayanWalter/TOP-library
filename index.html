@@ -16,7 +16,7 @@
 <h1>Javascript-Library</h1>
 <button id="addButton">NEW BOOK</button>
 <br><br>
-<form id="form" action="https://httpbin.org/post" method="post">
+<form id="addForm" action="https://httpbin.org/post" method="post">
   <div>
     <label for="title">Title:</label>
     <input type="text" id="title" name="title">
@@ -54,8 +54,14 @@
     <th>Index</th>
   </tr>
 </table>
-  <button id="deleteButton">Delete Index</button>
-
+<br>
+  <button id="deleteButton">DELETE BOOK</button>
+<form id="deleteForm" action="https://httpbin.org/post" method="post">
+  <div>
+    <label for="deleteIndex">Delete Index:</label>
+    <input type="text" id="deleteIndex" name="deleteIndex">
+  </div>
+</form>
   <script src="script.js"></script>
 </body>
 </html>

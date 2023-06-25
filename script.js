@@ -35,12 +35,12 @@ for (let i = 0; i < myLibrary.length; i++) {
   let readCell = newRow.insertCell();
   readCell.textContent = book.read;
 }
-// form.style.display = "none";
+addForm.style.display = "none";
 
 // toggle Button for the "NEW BOOK"-Form
 const btn = document.getElementById("addButton");
 btn.addEventListener("click", () => {
-  const form = document.getElementById("form");
+  const form = document.getElementById("addForm");
 
   if(form.style.display === "none"){
     form.style.display = "block";
@@ -49,7 +49,7 @@ btn.addEventListener("click", () => {
   }
 })
 
-document.getElementById('form').addEventListener('submit', function(event) {
+document.getElementById('addForm').addEventListener('submit', function(event) {
   event.preventDefault(); 
   
   // Read form-field
@@ -81,3 +81,17 @@ document.getElementById('form').addEventListener('submit', function(event) {
   // reset form
   document.getElementById('form').reset();
 });
+
+addForm.style.display = "none";
+
+// toggle Button for the "DELETE BOOK"-Form
+const deleteButton = document.getElementById("deleteButton");
+deleteButton.addEventListener("click", () => {
+  const form = document.getElementById("deleteForm");
+
+  if(form.style.display === "none"){
+    form.style.display = "block";
+  }else{
+    form.style.display = "none";
+  }
+})
