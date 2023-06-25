@@ -58,7 +58,7 @@ document.getElementById('addForm').addEventListener('submit', function(event) {
   let author = document.getElementById('author').value;
   let pages = document.getElementById('pages').value;
   let read = document.querySelector('input[name="read_radio"]:checked').value;
-  let index = myLibrary.length +1;
+  let index = myLibrary.length;
 
   // add newRow to table
   let archiveTable = document.getElementById('archive-table');
@@ -80,7 +80,7 @@ document.getElementById('addForm').addEventListener('submit', function(event) {
   addBookToLibrary(title, author, pages, read);
 
   // reset form
-  document.getElementById('addForm').reset();
+  // document.getElementById('addForm').reset();
 });
 
 addForm.style.display = "none";
@@ -96,6 +96,10 @@ deleteButton.addEventListener("click", () => {
     form.style.display = "none";
   }
 })
+
+function deleteBookFromLibrary(index){
+  myLibrary.splice(index, 1)
+}
 document.getElementById('deleteForm').addEventListener('submit', function(event) {
   event.preventDefault(); 
   
@@ -105,7 +109,10 @@ document.getElementById('deleteForm').addEventListener('submit', function(event)
   // delete Row from table
   let archiveTable = document.getElementById('archive-table');
 
-  archiveTable.deleteRow(index);
+  archiveTable.deleteRow(Number(index) + 1);
+
+  deleteBookFromLibrary(index);
+
 
   // reset form
   document.getElementById('deleteForm').reset();
