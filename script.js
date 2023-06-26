@@ -1,14 +1,24 @@
-function Book(title, author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
-  this.index = myLibrary.length;
-  this.info = function(){
+let archiveTable = document.getElementById("archive-table");
+const btn = document.getElementById("addButton");
+let addForm = document.getElementById('addForm');
+
+
+class Book{
+  constructor(title, author, pages, read){
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+  }
+  // class-body for methods
+  info(){
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
   }
 }
-let myLibrary = [];
+
+let lotr = new Book("Title", "Author", "pages", "yes");
+
+let myLibrary = [lotr];
 
 function updateIndexes() {
   myLibrary.forEach((book, index) => {
@@ -23,7 +33,6 @@ function addBookToLibrary(title, author, pages, read){
 
 }
 // display the books from the array in a table
-let archiveTable = document.getElementById("archive-table");
 
 for (let i = 0; i < myLibrary.length; i++) {
   let book = myLibrary[i];
@@ -46,7 +55,6 @@ for (let i = 0; i < myLibrary.length; i++) {
 addForm.style.display = "none";
 
 // toggle Button for the "NEW BOOK"-Form
-const btn = document.getElementById("addButton");
 btn.addEventListener("click", () => {
   const form = document.getElementById("addForm");
 
@@ -57,7 +65,7 @@ btn.addEventListener("click", () => {
   }
 })
 
-document.getElementById('addForm').addEventListener('submit', function(event) {
+addForm.addEventListener('submit', function(event) {
   event.preventDefault(); 
   
   // Read form-field
@@ -68,7 +76,7 @@ document.getElementById('addForm').addEventListener('submit', function(event) {
   let index = myLibrary.length;
 
   // add newRow to table
-  let archiveTable = document.getElementById('archive-table');
+  // let archiveTable = document.getElementById('archive-table');
 
   let newRow = archiveTable.insertRow();
 
