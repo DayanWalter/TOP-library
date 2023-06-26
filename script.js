@@ -10,10 +10,17 @@ function Book(title, author, pages, read) {
 }
 let myLibrary = [];
 
+function updateIndexes() {
+  myLibrary.forEach((book, index) => {
+    book.index = index;
+  });
+}
 // function for adding a book-object to the library-array
 function addBookToLibrary(title, author, pages, read){
     const bookTitle = new Book(title, author, pages, read)
-    return myLibrary.push(bookTitle)
+    myLibrary.push(bookTitle)
+    updateIndexes();
+
 }
 // display the books from the array in a table
 let archiveTable = document.getElementById("archive-table");
@@ -99,6 +106,7 @@ deleteButton.addEventListener("click", () => {
 
 function deleteBookFromLibrary(index){
   myLibrary.splice(index, 1)
+ updateIndexes();
 }
 document.getElementById('deleteForm').addEventListener('submit', function(event) {
   event.preventDefault(); 
