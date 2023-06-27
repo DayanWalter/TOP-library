@@ -98,54 +98,37 @@ newBookButton.addEventListener("click", () => {
 })
 
 // delete book
-
 function deleteBookFromLibrary(){
   let index = document.getElementById('deleteIndex').value;
 
   myLibrary.splice(index, 1)
 }
-
+//after clicking deleteButton(submit)
 deleteForm.addEventListener('submit', function(event) {
+  //prevent default behaviour
   event.preventDefault();
+  //invoke function for deleting book at index x
   deleteBookFromLibrary();
+  //refresh the index
   refreshTable();
 });
 
+//default: display:"none"
+deleteForm.style.display = "none";
 
-  // reset form
-  // document.getElementById('addForm').reset();
+// toggle Button for the "Delete Book"-Form
+deleteBookButton.addEventListener("click", () => {
+  let form = document.getElementById("deleteForm");
 
+  if(form.style.display === "none"){
+    form.style.display = "block";
+  }else{
+    form.style.display = "none";
+  }
+})
+let resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", () => {
+  document.getElementById('addForm').reset();
 
-  // addForm.style.display = "none";
-
-// // toggle Button for the "DELETE BOOK"-Form
-// const deleteButton = document.getElementById("deleteButton");
-// deleteButton.addEventListener("click", () => {
-//   const form = document.getElementById("deleteForm");
-
-//   if(form.style.display === "none"){
-//     form.style.display = "block";
-//   }else{
-//     form.style.display = "none";
-//   }
-// })
-
-
-// document.getElementById('deleteForm').addEventListener('submit', function(event) {
-//   event.preventDefault(); 
-  
-//   // Read form-field
-
-//   // delete Row from table
-//   let archiveTable = document.getElementById('archive-table');
-
-//   archiveTable.deleteRow(Number(index) + 1);
-
-//   deleteBookFromLibrary(index);
-
-
-//   // reset form
-//   document.getElementById('deleteForm').reset();
-// });
-
+})
 
