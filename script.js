@@ -36,36 +36,37 @@ addForm.addEventListener('submit', function(event) {
   addBookToLibrary();
 });
 
+let arrayTable = document.getElementById("array-table");
+// function to refresh the table
+function refreshTable(){
+  //delete everything in the table, except the header(index 0)
+  while (arrayTable.rows.length > 1) {
+    arrayTable.deleteRow(1);
+  }
+  // add every object in the array to the table
+  for (let i = 0; i < myLibrary.length; i++) {
+  let book = myLibrary[i];
 
-// let archiveTable = document.getElementById("archive-table");
+  let newRow = arrayTable.insertRow();
+
+  let titleCell = newRow.insertCell();
+  titleCell.textContent = book.title;
+
+  let authorCell = newRow.insertCell();
+  authorCell.textContent = book.author;
+
+  let pagesCell = newRow.insertCell();
+  pagesCell.textContent = book.pages;
+
+  let readCell = newRow.insertCell();
+  readCell.textContent = book.read;
+
+  let indexCell = newRow.insertCell();
+  indexCell.textContent = book.index;
+}
+}
 // const btn = document.getElementById("addButton");
 // let addForm = document.getElementById('addForm');
-
-
-// display the books from the array in a table
-
-// for (let i = 0; i < myLibrary.length; i++) {
-//   let book = myLibrary[i];
-
-//   let newRow = archiveTable.insertRow();
-
-//   let titleCell = newRow.insertCell();
-//   titleCell.textContent = book.title;
-
-//   let authorCell = newRow.insertCell();
-//   authorCell.textContent = book.author;
-
-//   let pagesCell = newRow.insertCell();
-//   pagesCell.textContent = book.pages;
-
-//   let readCell = newRow.insertCell();
-//   readCell.textContent = book.read;
-
-//   let indexCell = newRow.insertCell();
-//   indexCell.textContent = book.index;
-// }
-
-
 
 
   // add newRow to table
