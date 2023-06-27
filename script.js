@@ -99,16 +99,17 @@ newBookButton.addEventListener("click", () => {
 
 // delete book
 
-function deleteBookFromLibrary(event){
-  event.preventDefault();
-
+function deleteBookFromLibrary(){
   let index = document.getElementById('deleteIndex').value;
 
   myLibrary.splice(index, 1)
 }
 
-let deleteBookButton = document.getElementById("deleteBookButton")
-deleteBookButton.addEventListener("submit", deleteBookFromLibrary)
+deleteForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  deleteBookFromLibrary();
+  refreshTable();
+});
 
 
   // reset form
