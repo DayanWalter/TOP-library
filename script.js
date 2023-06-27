@@ -26,8 +26,9 @@ function addBookToLibrary(){
 
   // create new Book-object and...
   const newBook = new Book(title, author, pages, read)
-  // ...add to library
+  // ...add to library...
   myLibrary.push(newBook)
+  //...and refresh immediatly:
   refreshTable();
 }
 function updateIndexes() {
