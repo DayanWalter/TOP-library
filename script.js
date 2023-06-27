@@ -28,6 +28,7 @@ function addBookToLibrary(){
   const newBook = new Book(title, author, pages, read)
   // ...add to library
   myLibrary.push(newBook)
+  refreshTable();
 }
 function updateIndexes() {
   myLibrary.forEach((book, index) => {
