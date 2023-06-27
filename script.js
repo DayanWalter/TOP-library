@@ -10,7 +10,7 @@ class Book{
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
   }
 }
-//example book for visibility purpose
+// example book for visibility purpose
 let lotr = new Book("Lord of the Rings", "Tolkien", "1000", "true");
 
 // array for Book-object storage
@@ -28,7 +28,7 @@ function addBookToLibrary(){
   const newBook = new Book(title, author, pages, read)
   // ...add to library...
   myLibrary.push(newBook)
-  //...and refresh immediatly:
+  // ...and refresh immediatly:
   refreshTable();
 }
 function updateIndex() {
@@ -40,14 +40,14 @@ function updateIndex() {
 addForm.addEventListener('submit', function(event) {
   // prevent default behaviour after clicking addBookButton(submit-button)
   event.preventDefault(); 
-  //invoke function for adding a new book
+  // invoke function for adding a new book
   addBookToLibrary();
 });
 
 let arrayTable = document.getElementById("array-table");
 // function to refresh the table
 function refreshTable(){
-    //delete everything in the table, except the header(index 0)
+    // delete everything in the table, except the header(index 0)
     while (arrayTable.rows.length > 1) {
       arrayTable.deleteRow(1);
     }
@@ -83,7 +83,7 @@ refreshButton.addEventListener("click", refreshTable)
 // toggle-visibility
 let newBookButton = document.getElementById("newBookButton");
 
-//default: display:"none"
+// default: display:"none"
 addForm.style.display = "none";
 
 // toggle Button for the "New Book"-Form
@@ -103,17 +103,17 @@ function deleteBookFromLibrary(){
 
   myLibrary.splice(index, 1)
 }
-//after clicking deleteButton(submit)
+// after clicking deleteButton(submit)
 deleteForm.addEventListener('submit', function(event) {
-  //prevent default behaviour
+  // prevent default behaviour
   event.preventDefault();
-  //invoke function for deleting book at index x
+  // invoke function for deleting book at index x
   deleteBookFromLibrary();
-  //refresh the index
+  // refresh the index
   refreshTable();
 });
 
-//default: display:"none"
+// default: display:"none"
 deleteForm.style.display = "none";
 
 // toggle Button for the "Delete Book"-Form
@@ -126,6 +126,7 @@ deleteBookButton.addEventListener("click", () => {
     form.style.display = "none";
   }
 })
+// resetButton for addForm
 let resetButton = document.getElementById("resetButton");
 resetButton.addEventListener("click", () => {
   document.getElementById('addForm').reset();
