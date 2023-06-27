@@ -1,8 +1,3 @@
-let archiveTable = document.getElementById("archive-table");
-const btn = document.getElementById("addButton");
-let addForm = document.getElementById('addForm');
-
-
 class Book{
   constructor(title, author, pages, read){
     this.title = title
@@ -20,116 +15,9 @@ let lotr = new Book("Title", "Author", "pages", "yes");
 
 let myLibrary = [lotr];
 
-function updateIndexes() {
-  myLibrary.forEach((book, index) => {
-    book.index = index;
-  });
-}
 // function for adding a book-object to the library-array
 function addBookToLibrary(title, author, pages, read){
     const bookTitle = new Book(title, author, pages, read)
     myLibrary.push(bookTitle)
     updateIndexes();
-
 }
-// display the books from the array in a table
-
-for (let i = 0; i < myLibrary.length; i++) {
-  let book = myLibrary[i];
-
-  let newRow = archiveTable.insertRow();
-
-  let titleCell = newRow.insertCell();
-  titleCell.textContent = book.title;
-
-  let authorCell = newRow.insertCell();
-  authorCell.textContent = book.author;
-
-  let pagesCell = newRow.insertCell();
-  pagesCell.textContent = book.pages;
-
-  let readCell = newRow.insertCell();
-  readCell.textContent = book.read;
-}
-
-addForm.style.display = "none";
-
-// toggle Button for the "NEW BOOK"-Form
-btn.addEventListener("click", () => {
-  const form = document.getElementById("addForm");
-
-  if(form.style.display === "none"){
-    form.style.display = "block";
-  }else{
-    form.style.display = "none";
-  }
-})
-
-addForm.addEventListener('submit', function(event) {
-  event.preventDefault(); 
-  
-  // Read form-field
-  let title = document.getElementById('title').value;
-  let author = document.getElementById('author').value;
-  let pages = document.getElementById('pages').value;
-  let read = document.querySelector('input[name="read_radio"]:checked').value;
-  let index = myLibrary.length;
-
-  // add newRow to table
-  // let archiveTable = document.getElementById('archive-table');
-
-  let newRow = archiveTable.insertRow();
-
-  let titleCell = newRow.insertCell();
-  let authorCell = newRow.insertCell();
-  let pagesCell = newRow.insertCell();
-  let readCell = newRow.insertCell();
-  let indexCell = newRow.insertCell();
-
-  titleCell.innerHTML = title;
-  authorCell.innerHTML = author;
-  pagesCell.innerHTML = pages;
-  readCell.innerHTML = read;
-  indexCell.innerHTML = index;
-
-  addBookToLibrary(title, author, pages, read);
-
-  // reset form
-  // document.getElementById('addForm').reset();
-});
-
-addForm.style.display = "none";
-
-// toggle Button for the "DELETE BOOK"-Form
-const deleteButton = document.getElementById("deleteButton");
-deleteButton.addEventListener("click", () => {
-  const form = document.getElementById("deleteForm");
-
-  if(form.style.display === "none"){
-    form.style.display = "block";
-  }else{
-    form.style.display = "none";
-  }
-})
-
-function deleteBookFromLibrary(index){
-  myLibrary.splice(index, 1)
- updateIndexes();
-}
-document.getElementById('deleteForm').addEventListener('submit', function(event) {
-  event.preventDefault(); 
-  
-  // Read form-field
-  let index = document.getElementById('deleteIndex').value;
-
-  // delete Row from table
-  let archiveTable = document.getElementById('archive-table');
-
-  archiveTable.deleteRow(Number(index) + 1);
-
-  deleteBookFromLibrary(index);
-
-
-  // reset form
-  document.getElementById('deleteForm').reset();
-});
