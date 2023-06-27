@@ -31,7 +31,7 @@ function addBookToLibrary(){
   //...and refresh immediatly:
   refreshTable();
 }
-function updateIndexes() {
+function updateIndex() {
   myLibrary.forEach((book, index) => {
     book.index = index;
   });
@@ -51,7 +51,8 @@ function refreshTable(){
     while (arrayTable.rows.length > 1) {
       arrayTable.deleteRow(1);
     }
-  updateIndexes();
+    // after deletion, update the index of every object
+    updateIndex();
     // add every object in the array to the table
     for (let i = 0; i < myLibrary.length; i++) {
     let book = myLibrary[i];
@@ -85,7 +86,7 @@ let newBookButton = document.getElementById("newBookButton");
 //default: display:"none"
 addForm.style.display = "none";
 
-// toggle Button for the "NEW BOOK"-Form
+// toggle Button for the "New Book"-Form
 newBookButton.addEventListener("click", () => {
   let form = document.getElementById("addForm");
 
@@ -98,29 +99,16 @@ newBookButton.addEventListener("click", () => {
 
 // delete book
 
-function deleteBookFromLibrary(index){
+function deleteBookFromLibrary(event){
+  event.preventDefault();
+
+  let index = document.getElementById('deleteIndex').value;
+
   myLibrary.splice(index, 1)
 }
 
-// let addForm = document.getElementById('addForm');
-
-
-  // add newRow to table
-  // let archiveTable = document.getElementById('archive-table');
-
-  // let newRow = archiveTable.insertRow();
-
-  // let titleCell = newRow.insertCell();
-  // let authorCell = newRow.insertCell();
-  // let pagesCell = newRow.insertCell();
-  // let readCell = newRow.insertCell();
-  // let indexCell = newRow.insertCell();
-
-  // titleCell.innerHTML = title;
-  // authorCell.innerHTML = author;
-  // pagesCell.innerHTML = pages;
-  // readCell.innerHTML = read;
-  // indexCell.innerHTML = index;
+let deleteBookButton = document.getElementById("deleteBookButton")
+deleteBookButton.addEventListener("submit", deleteBookFromLibrary)
 
 
   // reset form
@@ -146,7 +134,6 @@ function deleteBookFromLibrary(index){
 //   event.preventDefault(); 
   
 //   // Read form-field
-//   let index = document.getElementById('deleteIndex').value;
 
 //   // delete Row from table
 //   let archiveTable = document.getElementById('archive-table');
