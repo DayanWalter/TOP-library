@@ -23,10 +23,16 @@ function addBookToLibrary(){
   let author = document.getElementById('author').value;
   let pages = document.getElementById('pages').value;
   let read = document.querySelector('input[name="read_radio"]:checked').value; 
+
   // create new Book-object and...
   const newBook = new Book(title, author, pages, read)
   // ...add to library
   myLibrary.push(newBook)
+}
+function updateIndexes() {
+  myLibrary.forEach((book, index) => {
+    book.index = index;
+  });
 }
 // after clicking addBookButton
 addForm.addEventListener('submit', function(event) {
@@ -43,6 +49,7 @@ function refreshTable(){
     while (arrayTable.rows.length > 1) {
       arrayTable.deleteRow(1);
     }
+  updateIndexes();
     // add every object in the array to the table
     for (let i = 0; i < myLibrary.length; i++) {
     let book = myLibrary[i];
@@ -87,6 +94,11 @@ newBookButton.addEventListener("click", () => {
   }
 })
 
+// delete book
+
+function deleteBookFromLibrary(index){
+  myLibrary.splice(index, 1)
+}
 
 // let addForm = document.getElementById('addForm');
 
@@ -127,10 +139,7 @@ newBookButton.addEventListener("click", () => {
 //   }
 // })
 
-// function deleteBookFromLibrary(index){
-//   myLibrary.splice(index, 1)
-//  updateIndexes();
-// }
+
 // document.getElementById('deleteForm').addEventListener('submit', function(event) {
 //   event.preventDefault(); 
   
