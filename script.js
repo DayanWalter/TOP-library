@@ -69,7 +69,25 @@ function refreshTable(){
 let refreshButton = document.getElementById("refreshButton")
 refreshButton.addEventListener("click", refreshTable)
 
-// const btn = document.getElementById("addButton");
+
+// toggle-visibility
+let newBookButton = document.getElementById("newBookButton");
+
+//default: display:"none"
+addForm.style.display = "none";
+
+// toggle Button for the "NEW BOOK"-Form
+newBookButton.addEventListener("click", () => {
+  let form = document.getElementById("addForm");
+
+  if(form.style.display === "none"){
+    form.style.display = "block";
+  }else{
+    form.style.display = "none";
+  }
+})
+
+
 // let addForm = document.getElementById('addForm');
 
 
@@ -95,7 +113,7 @@ refreshButton.addEventListener("click", refreshTable)
   // document.getElementById('addForm').reset();
 
 
-// addForm.style.display = "none";
+  // addForm.style.display = "none";
 
 // // toggle Button for the "DELETE BOOK"-Form
 // const deleteButton = document.getElementById("deleteButton");
@@ -131,15 +149,4 @@ refreshButton.addEventListener("click", refreshTable)
 //   document.getElementById('deleteForm').reset();
 // });
 
-// addForm.style.display = "none";
 
-// // toggle Button for the "NEW BOOK"-Form
-// btn.addEventListener("click", () => {
-//   const form = document.getElementById("addForm");
-
-//   if(form.style.display === "none"){
-//     form.style.display = "block";
-//   }else{
-//     form.style.display = "none";
-//   }
-// })
