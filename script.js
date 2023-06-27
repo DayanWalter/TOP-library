@@ -1,8 +1,3 @@
-// let archiveTable = document.getElementById("archive-table");
-// const btn = document.getElementById("addButton");
-// let addForm = document.getElementById('addForm');
-
-
 class Book{
   constructor(title, author, pages, read){
     this.title = title
@@ -40,6 +35,11 @@ addForm.addEventListener('submit', function(event) {
   //invoke function for adding a new book
   addBookToLibrary();
 });
+
+
+// let archiveTable = document.getElementById("archive-table");
+// const btn = document.getElementById("addButton");
+// let addForm = document.getElementById('addForm');
 
 
 // display the books from the array in a table
