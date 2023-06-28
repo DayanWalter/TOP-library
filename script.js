@@ -17,6 +17,12 @@ class Book{
     }
   }
 }
+
+function toggleViaIndex(index){
+  // let index = document.getElementById('deleteIndex').value;
+  myLibrary[index].toggleRead()
+}
+
 // example book for visibility purpose
 let lotr = new Book("Lord of the Rings", "Tolkien", "1000", "yes");
 
@@ -90,6 +96,11 @@ function refreshTable(){
 
     let indexCell = newRow.insertCell();
     indexCell.textContent = book.index;
+
+    let toggleCell = newRow.insertCell();
+    let toggleButton = document.createElement("button");
+    toggleButton.textContent = "Toggle Read";
+    toggleCell.appendChild(toggleButton);
   }
 }
 
