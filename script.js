@@ -94,16 +94,22 @@ function refreshTable(){
     let readCell = newRow.insertCell();
     readCell.textContent = book.read;
 
-    let indexCell = newRow.insertCell();
-    indexCell.textContent = book.index;
+    let deleteCell = newRow.insertCell();
+    let deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteCell.appendChild(deleteButton);
+    deleteButton.addEventListener("click", () => {
+      myLibrary.splice(book.index, 1);
+      refreshTable();
+    })
 
     let toggleCell = newRow.insertCell();
     let toggleButton = document.createElement("button");
     toggleButton.textContent = "Toggle Read";
     toggleCell.appendChild(toggleButton);
     toggleButton.addEventListener("click", () => {
-      book.toggleRead()
-      refreshTable()
+      book.toggleRead();
+      refreshTable();
     })
   }
 }
@@ -121,40 +127,6 @@ addForm.style.display = "none";
 // toggle Button for the "New Book"-Form
 newBookButton.addEventListener("click", () => {
   let form = document.getElementById("addForm");
-
-  if(form.style.display === "none"){
-    form.style.display = "block";
-  }else{
-    form.style.display = "none";
-  }
-})
-
-// delete book via index from array and table
-function deleteBookFromLibrary(){
-  let index = document.getElementById('deleteIndex').value;
-
-  myLibrary.splice(index, 1)
-}
-
-// after clicking deleteButton(submit)
-deleteForm.addEventListener('submit', function(event) {
-
-  // prevent default behaviour
-  event.preventDefault();
-
-  // invoke function for deleting book at index x
-  deleteBookFromLibrary();
-
-  // refresh the index
-  refreshTable();
-});
-
-// default: display:"none"
-deleteForm.style.display = "none";
-
-// toggle Button for the "Delete Book"-Form
-deleteBookButton.addEventListener("click", () => {
-  let form = document.getElementById("deleteForm");
 
   if(form.style.display === "none"){
     form.style.display = "block";
