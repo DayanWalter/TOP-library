@@ -9,9 +9,16 @@ class Book{
   info(){
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
   }
+  toggleRead(){
+    if(this.read === "yes"){
+      this.read = "no"
+    }else{
+      this.read = "yes"
+    }
+  }
 }
 // example book for visibility purpose
-let lotr = new Book("Lord of the Rings", "Tolkien", "1000", "true");
+let lotr = new Book("Lord of the Rings", "Tolkien", "1000", "yes");
 
 // array for Book-object storage
 let myLibrary = [lotr];
