@@ -101,8 +101,10 @@ function refreshTable(){
     let toggleButton = document.createElement("button");
     toggleButton.textContent = "Toggle Read";
     toggleCell.appendChild(toggleButton);
-    toggleButton.addEventListener("click", toggleViaIndex(book.index))
-
+    toggleButton.addEventListener("click", () => {
+      book.toggleRead()
+      refreshTable()
+    })
   }
 }
 
