@@ -89,19 +89,6 @@ function refreshTable(){
     let readCell = newRow.insertCell();
     readCell.textContent = book.read;
 
-    // insert a cell with a delete button
-    let deleteCell = newRow.insertCell();
-    let deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteCell.appendChild(deleteButton);
-
-    deleteButton.addEventListener("click", () => {
-      // delete element at book.index
-      myLibrary.splice(book.index, 1);
-      // refresh the table
-      refreshTable();
-    })
-
     // insert a cell with a toggle button
     let toggleCell = newRow.insertCell();
     let toggleButton = document.createElement("button");
@@ -114,6 +101,20 @@ function refreshTable(){
       // refresh the table
       refreshTable();
     })
+
+    // insert a cell with a delete button
+    let deleteCell = newRow.insertCell();
+    let deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteCell.appendChild(deleteButton);
+
+    deleteButton.addEventListener("click", () => {
+      // delete element at book.index
+      myLibrary.splice(book.index, 1);
+      // refresh the table
+      refreshTable();
+    })
+    
   }
 }
 
