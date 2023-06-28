@@ -18,11 +18,6 @@ class Book{
   }
 }
 
-function toggleViaIndex(index){
-  // let index = document.getElementById('deleteIndex').value;
-  myLibrary[index].toggleRead()
-}
-
 // example book for visibility purpose
 let lotr = new Book("Lord of the Rings", "Tolkien", "1000", "yes");
 
@@ -68,7 +63,7 @@ let arrayTable = document.getElementById("array-table");
 // function to refresh the table
 function refreshTable(){
 
-    // delete everything in the table, except the header(index 0)
+    // delete everything in the table, except the header(index = 0)
     while (arrayTable.rows.length > 1) {
       arrayTable.deleteRow(1);
     }
@@ -94,21 +89,29 @@ function refreshTable(){
     let readCell = newRow.insertCell();
     readCell.textContent = book.read;
 
+    // insert a cell with a delete button
     let deleteCell = newRow.insertCell();
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteCell.appendChild(deleteButton);
+
     deleteButton.addEventListener("click", () => {
+      // delete element at book.index
       myLibrary.splice(book.index, 1);
+      // refresh the table
       refreshTable();
     })
 
+    // insert a cell with a toggle button
     let toggleCell = newRow.insertCell();
     let toggleButton = document.createElement("button");
     toggleButton.textContent = "Toggle Read";
     toggleCell.appendChild(toggleButton);
+
     toggleButton.addEventListener("click", () => {
+      // invoke function on book(myLibrary[i])
       book.toggleRead();
+      // refresh the table
       refreshTable();
     })
   }
