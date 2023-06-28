@@ -100,7 +100,7 @@ function refreshTable(){
       book.toggleRead();
       // refresh the table
       refreshTable();
-    })
+    });
 
     // insert a cell with a delete button
     let deleteCell = newRow.insertCell();
@@ -113,8 +113,7 @@ function refreshTable(){
       myLibrary.splice(book.index, 1);
       // refresh the table
       refreshTable();
-    })
-    
+    });
   }
 }
 
