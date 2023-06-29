@@ -1,30 +1,53 @@
-table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-  }
-  form{
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  text-align: center;
+}
+#addForm{
+  text-align: left;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: rgb(147, 230, 255);
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  max-width: 80%;
+  font-size: 1.2rem;
+}
+.row{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+@media only screen and (max-width: 950px){
+  #addForm{
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr 1fr; */
     max-width: 50%;
   }
-  input{
-    font-size: 1.2rem;
-    border: 1px solid #E5E7EB;
-    border-radius: 3px;
-    min-height: 30px;
-    padding: 5px;
-  }
-  input:focus{
-    outline: none;
-    border: 1px solid blue;
-    box-shadow: 2px 2px 10px rgb(216, 216, 216);
-  }
-  div{
-    background-color: red;
-  }
+}
+/* 750px!!! */
+
+#resetButton, #addBookButton{
+  /* max-height: 50px;
+  max-width: 150px; */
+
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+border: 1px solid black;
+padding: 8px;
+text-align: left;
+}
