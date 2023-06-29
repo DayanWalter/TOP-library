@@ -29,16 +29,30 @@ html{
   #addForm{
     display: grid;
     grid-template-columns: 1fr;
-    /* grid-template-rows: 1fr 1fr; */
+    grid-template-rows: repeat(6, 1fr);
     max-width: 50%;
   }
 }
 /* 750px!!! */
 
 #resetButton, #addBookButton{
-  /* max-height: 50px;
-  max-width: 150px; */
+  min-height: 50px;
+  min-width: 150px;
+  font-size: 1.2rem;
+}
+#resetButton{
+  background-color: rgb(255, 128, 128);
+}
+#addBookButton{
+  background-color: rgb(128, 255, 128);
+}
+.button{
+  display: grid;
+  place-items: center;
 
+}
+#addForm > button{
+  color: 
 }
 
 
