@@ -50,7 +50,6 @@ legend{
   font-weight:bold;
 }
 .row > input{
-  max-width: 400px;
   min-height: 25px;
 }
 .row{
@@ -90,6 +89,9 @@ label{
   display: grid;
   place-items: center;
 
+}
+button:active{
+  transform: scale(0.98);
 }
 
 table {
