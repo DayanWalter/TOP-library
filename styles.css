@@ -9,6 +9,14 @@ html{
   text-align: center;
   background-color: rgb(255, 224, 247);
 }
+.content{
+  margin: auto;
+  margin-top: 50px;
+  width: 80%;
+  /* background-color: green; */
+  border: 1px solid black;
+  border-radius: 20px;
+}
 #newBookButton{
   margin:15px 0px;
   padding: 10px 40px;
