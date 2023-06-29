@@ -7,15 +7,18 @@
 }
 html{
   text-align: center;
-  background-color: rgb(255, 224, 247);
+  background-color: #6495ED;
 }
 .content{
+  padding: 15px;
   margin: auto;
   margin-top: 50px;
   width: 80%;
   /* background-color: green; */
   border: 1px solid black;
   border-radius: 20px;
+  background-color: #E6E6FA;
+
 }
 #newBookButton{
   margin:15px 0px;
@@ -24,7 +27,25 @@ html{
   border: 1px solid #636363;
   box-shadow: 2px 2px 10px rgb(65, 65, 65);
   border-radius: 10px;
-  background-color: rgb(128, 255, 128);
+  background-color: #4169E1;
+  color: black;
+}
+svg{
+  width: 22px;
+  margin-left: 5px;
+}
+.button-container{
+  display: flex;
+  align-items: center;
+}
+#refreshButton{
+  margin:15px 0px;
+  padding: 10px 40px;
+  font-size: 1.5rem;
+  border: 1px solid #636363;
+  box-shadow: 2px 2px 10px rgb(65, 65, 65);
+  border-radius: 10px;
+  background-color: #4169E1;
   color: black;
 }
 #addForm{
@@ -34,7 +55,7 @@ html{
   border: 1px solid black;
   border-radius: 5px;
   padding: 15px;
-  background-color: rgb(147, 230, 255);
+  background-color: #D6E4EC;
   display: grid;
   gap: 15px;
   grid-template-columns: 1fr 1fr 1fr;
@@ -84,21 +105,21 @@ label{
   border: 1px solid #E5E7EB;
   border-radius: 10px;
   border: 1px solid #636363;
-
+background-color: #6495ED;
 }
-#resetButton{
+/* #resetButton{
   background-color: rgb(255, 128, 128);
 }
 #addBookButton{
   background-color: rgb(128, 255, 128);
 
-}
+} */
 .button{
   display: grid;
   place-items: center;
 }
 .delete-button{
-  background-color: rgb(255, 128, 128);
+  background-color: #1E90FF;
   padding: 5px 20px;
   font-size: 1.5rem;
   border: 1px solid #E5E7EB;
@@ -107,7 +128,7 @@ label{
 
 }
 .toggle-button{
-  background-color: rgb(147, 230, 255);
+  background-color: #9370DB;
   padding: 5px 20px;
   font-size: 1.5rem;
   border: 1px solid #E5E7EB;
