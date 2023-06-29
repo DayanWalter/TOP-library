@@ -92,7 +92,8 @@ function refreshTable(){
     // insert a cell with a toggle button
     let toggleCell = newRow.insertCell();
     let toggleButton = document.createElement("button");
-    toggleButton.textContent = "Toggle Read";
+    toggleButton.textContent = "Change";
+    toggleButton.className = "toggle-button"
     toggleCell.appendChild(toggleButton);
 
     toggleButton.addEventListener("click", () => {
@@ -106,6 +107,7 @@ function refreshTable(){
     let deleteCell = newRow.insertCell();
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
+    deleteButton.className = "delete-button"
     deleteCell.appendChild(deleteButton);
 
     deleteButton.addEventListener("click", () => {
