@@ -15,8 +15,8 @@ html{
   border: 1px solid #636363;
   box-shadow: 2px 2px 10px rgb(65, 65, 65);
   border-radius: 10px;
-  background-color: #596D48;
-  color: #E5E7EB;
+  background-color: rgb(128, 255, 128);
+  color: black;
 }
 #addForm{
   text-align: left;
@@ -36,6 +36,18 @@ html{
 }
 fieldset{
   max-width: 200px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid black;
+}
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+legend{
+  font-weight:bold;
 }
 .row > input{
   max-width: 400px;
@@ -62,15 +74,17 @@ label{
   margin-bottom: 20px;
   font-size: 1.5rem;
   border: 1px solid #E5E7EB;
-  box-shadow: 2px 2px 10px rgb(189, 189, 189);
+  box-shadow: 2px 2px 10px rgb(65, 65, 65);
   border-radius: 10px;
-  background-color: #596D48;
+  border: 1px solid #636363;
+
 }
 #resetButton{
   background-color: rgb(255, 128, 128);
 }
 #addBookButton{
   background-color: rgb(128, 255, 128);
+
 }
 .button{
   display: grid;
