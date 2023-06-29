@@ -11,89 +11,89 @@
 
   </style>
 </head>
-
 <body>
-<div class="content">
-<h1>Javascript-Library</h1>
-<button id="newBookButton">
-  <div class="button-container">New Book
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>book-arrow-down</title><path d="M13 19C13 20.1 13.3 21.12 13.81 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H7V9L9.5 7.5L12 9V2H18C19.1 2 20 2.89 20 4V13.09C19.67 13.04 19.34 13 19 13C15.69 13 13 15.69 13 19M20 20V16H18V20H16L19 23L22 20H20Z" /></svg>
-  </div>
-</button>
-
-<div class="container" id="container">
-<form id="addForm" action="https://httpbin.org/post" method="post">
-  <div class="row">
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title">
-  </div>
-
-  <div class="row">
-    <label for="author">Author:</label>
-    <input type="text" name="author" id="author">
-  </div>
-
-  <div class="row">
-    <label for="pages">Pages:</label>
-    <input type="text" name="pages" id="pages">
-  </div>
-
-  <fieldset>
-    <legend>Already read?</legend>
-    <div class="radio-group">
-        <label for="read_yes">Yes
-        <input type="radio" id="read_yes" name="read_radio" value= "yes">
-        </label>
+  <div class="content">
     
-        <label for="read_no">No
-        <input type="radio" id="read_no" name="read_radio" value= "no">
-        </label>
-      </div>
-  </fieldset>
+    <h1>Javascript-Library</h1>
 
-  <div class="button">
-    <button id="resetButton">
-      <div class="button-container">Reset Form
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>file-document-refresh</title><path d="M6 2H14L20 8V12.17C19.5 12.06 19 12 18.5 12H6V14H13.81C13.26 14.58 12.81 15.25 12.5 16H6V18H12V18.5C12 19.79 12.38 21 13 22H6C4.89 22 4 21.1 4 20V4C4 2.89 4.89 2 6 2M13 9H18.5L13 3.5V9M18 14.5C19.11 14.5 20.11 14.95 20.83 15.67L22 14.5V18.5H18L19.77 16.73C19.32 16.28 18.69 16 18 16C16.62 16 15.5 17.12 15.5 18.5C15.5 19.88 16.62 21 18 21C18.82 21 19.54 20.61 20 20H21.71C21.12 21.47 19.68 22.5 18 22.5C15.79 22.5 14 20.71 14 18.5C14 16.29 15.79 14.5 18 14.5Z" /></svg>
-      </div>
-      </button>
-      
-      
-    </div>
-  <div class="button">
-    <button id="addBookButton">
-      <div class="button-container">Add Book
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>book-plus</title><path d="M13 19C13 20.1 13.3 21.12 13.81 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H7V9L9.5 7.5L12 9V2H18C19.1 2 20 2.89 20 4V13.09C19.67 13.04 19.34 13 19 13C15.69 13 13 15.69 13 19M20 18V15H18V18H15V20H18V23H20V20H23V18H20Z" /></svg>
+    <button id="newBookButton">
+    <div class="button-container">New Book
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>book-arrow-down</title><path d="M13 19C13 20.1 13.3 21.12 13.81 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H7V9L9.5 7.5L12 9V2H18C19.1 2 20 2.89 20 4V13.09C19.67 13.04 19.34 13 19 13C15.69 13 13 15.69 13 19M20 20V16H18V20H16L19 23L22 20H20Z" /></svg>
     </div>
     </button>
-  </div>
-</form>
-</div>
-<hr>
 
-  <button id="refreshButton">
-    <div class="button-container">Refresh Library
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>refresh</title><path d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z" /></svg>
+    <div class="container" id="container">
+      <form id="addForm" action="https://httpbin.org/post" method="post">
+
+        <div class="row">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title">
+        </div>
+
+        <div class="row">
+          <label for="author">Author:</label>
+          <input type="text" name="author" id="author">
+        </div>
+
+        <div class="row">
+          <label for="pages">Pages:</label>
+          <input type="text" name="pages" id="pages">
+        </div>
+
+        <fieldset>
+          <legend>Already read?</legend>
+          <div class="radio-group">
+              <label for="read_yes">Yes
+              <input type="radio" id="read_yes" name="read_radio" value= "yes">
+              </label>
+              <label for="read_no">No
+              <input type="radio" id="read_no" name="read_radio" value= "no">
+              </label>
+          </div>
+        </fieldset>
+
+        <div class="button">
+          <button id="resetButton">
+            <div class="button-container">Reset Form
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>file-document-refresh</title><path d="M6 2H14L20 8V12.17C19.5 12.06 19 12 18.5 12H6V14H13.81C13.26 14.58 12.81 15.25 12.5 16H6V18H12V18.5C12 19.79 12.38 21 13 22H6C4.89 22 4 21.1 4 20V4C4 2.89 4.89 2 6 2M13 9H18.5L13 3.5V9M18 14.5C19.11 14.5 20.11 14.95 20.83 15.67L22 14.5V18.5H18L19.77 16.73C19.32 16.28 18.69 16 18 16C16.62 16 15.5 17.12 15.5 18.5C15.5 19.88 16.62 21 18 21C18.82 21 19.54 20.61 20 20H21.71C21.12 21.47 19.68 22.5 18 22.5C15.79 22.5 14 20.71 14 18.5C14 16.29 15.79 14.5 18 14.5Z" /></svg>
+            </div>
+            </button> 
+        </div>
+
+        <div class="button">
+          <button id="addBookButton">
+            <div class="button-container">Add Book
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>book-plus</title><path d="M13 19C13 20.1 13.3 21.12 13.81 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H7V9L9.5 7.5L12 9V2H18C19.1 2 20 2.89 20 4V13.09C19.67 13.04 19.34 13 19 13C15.69 13 13 15.69 13 19M20 18V15H18V18H15V20H18V23H20V20H23V18H20Z" /></svg>
+            </div>
+          </button>
+        </div>
+      </form>
     </div>
-  </button>
 
-<br>
+    <hr>
 
+    <button id="refreshButton">
+      <div class="button-container">Refresh Library
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>refresh</title><path d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z" /></svg>
+      </div>
+    </button>
 
-<table id="array-table">
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Pages</th>
-    <th>Read</th>
-    <th>Read</th>
-    <th>Delete</th>
-  </tr>
-</table>
+    <br>
 
-<br>
+    <table id="array-table">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Pages</th>
+      <th>Read</th>
+      <th>Read</th>
+      <th>Delete</th>
+    </tr>
+    </table>
 
-  <script src="script.js"></script>
+    <br>
+
+    <script src="script.js"></script>
   </div>
 </body>
 </html>
