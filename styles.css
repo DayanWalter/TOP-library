@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 html{
   text-align: center;
@@ -14,39 +13,53 @@ html{
   margin: auto;
   margin-top: 50px;
   width: 80%;
-  /* background-color: green; */
   border: 1px solid black;
   border-radius: 20px;
   background-color: #E6E6FA;
-
-}
-#newBookButton{
-  margin:15px 0px;
-  padding: 10px 40px;
-  font-size: 1.5rem;
-  border: 1px solid #636363;
-  box-shadow: 2px 2px 10px rgb(65, 65, 65);
-  border-radius: 10px;
-  background-color: #4169E1;
-  color: black;
-}
-svg{
-  width: 22px;
-  margin-left: 5px;
 }
 .button-container{
   display: flex;
   align-items: center;
 }
-#refreshButton{
-  margin:15px 0px;
+#newBookButton, #refreshButton, #resetButton, #addBookButton{
   padding: 10px 40px;
   font-size: 1.5rem;
-  border: 1px solid #636363;
-  box-shadow: 2px 2px 10px rgb(65, 65, 65);
   border-radius: 10px;
+  margin: 20px;
+  border: 1px solid #636363;
+
+}
+#newBookButton, #refreshButton{
   background-color: #4169E1;
-  color: black;
+}
+#resetButton, #addBookButton{
+  background-color: #6495ED;
+}
+.button{
+  display: grid;
+  place-items: center;
+}
+.delete-button, .toggle-button{
+  padding: 5px 20px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #636363;
+}
+.delete-button{
+  background-color: #1E90FF;
+}
+.toggle-button{
+  background-color: #9370DB;
+}
+button{
+  cursor:pointer;
+}
+button:active{
+  transform: scale(0.98);
+}
+svg{
+  width: 22px;
+  margin-left: 5px;
 }
 #addForm{
   text-align: left;
@@ -58,11 +71,18 @@ svg{
   background-color: #D6E4EC;
   display: grid;
   gap: 15px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   max-width: 80%;
   font-size: 1.2rem;
-
+}
+@media only screen and (max-width: 950px){
+  #addForm{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    max-width: 50%;
+  }
 }
 fieldset{
   max-width: 200px;
@@ -70,14 +90,13 @@ fieldset{
   padding: 5px;
   border: 1px solid black;
 }
+legend{
+  font-weight:bold;
+}
 .radio-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
-}
-
-legend{
-  font-weight:bold;
 }
 .row > input{
   min-height: 25px;
@@ -90,56 +109,6 @@ legend{
 label{
   margin-bottom: 5px;
 }
-@media only screen and (max-width: 950px){
-  #addForm{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
-    max-width: 50%;
-  }
-}
-#resetButton, #addBookButton{
-  padding: 10px 40px;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-  border: 1px solid #E5E7EB;
-  border-radius: 10px;
-  border: 1px solid #636363;
-background-color: #6495ED;
-}
-/* #resetButton{
-  background-color: rgb(255, 128, 128);
-}
-#addBookButton{
-  background-color: rgb(128, 255, 128);
-
-} */
-.button{
-  display: grid;
-  place-items: center;
-}
-.delete-button{
-  background-color: #1E90FF;
-  padding: 5px 20px;
-  font-size: 1.5rem;
-  border: 1px solid #E5E7EB;
-  border-radius: 10px;
-  border: 1px solid #636363;
-
-}
-.toggle-button{
-  background-color: #9370DB;
-  padding: 5px 20px;
-  font-size: 1.5rem;
-  border: 1px solid #E5E7EB;
-  border-radius: 10px;
-  border: 1px solid #636363;
-
-}
-button:active{
-  transform: scale(0.98);
-}
-
 table {
   border-collapse: collapse;
   width: 100%;
