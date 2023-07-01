@@ -127,7 +127,7 @@ refreshButton.addEventListener("click", refreshTable)
 let newBookButton = document.getElementById("newBookButton");
 
 // default: display:"none"
-// addForm.style.display = "none";
+addForm.style.display = "none";
 
 // toggle Button for the "New Book"-Form
 newBookButton.addEventListener("click", () => {
