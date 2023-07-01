@@ -19,10 +19,10 @@ class Book{
 }
 
 // example book for visibility purpose
-let lotr = new Book("Lord of the Rings", "Tolkien", "1000", "yes");
+// let lotr = new Book("Lord of the Rings", "Tolkien", "1000", "yes");
 
 // array for Book-object storage
-let myLibrary = [lotr];
+let myLibrary = [];
 
 // function for adding a Book-object to the library-array
 function addBookToLibrary(){
