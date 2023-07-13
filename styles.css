@@ -1,27 +1,31 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-html{
+html {
   text-align: center;
-  background-color: #6495ED;
+  background-color: #6495ed;
 }
-.content{
+.content {
   padding: 15px;
   margin: auto;
   margin-top: 50px;
   width: 80%;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: #E6E6FA;
+  background-color: #e6e6fa;
 }
-.button-container{
+.button-container {
   display: flex;
   align-items: center;
 }
-#newBookButton, #refreshButton, #resetButton, #addBookButton{
+#newBookButton,
+#refreshButton,
+#resetButton,
+#addBookButton {
   padding: 10px 40px;
   font-size: 1.2rem;
   border-radius: 10px;
@@ -29,39 +33,42 @@ html{
   border: 1px solid #636363;
   width: fit-content;
 }
-#newBookButton, #refreshButton{
-  background-color: #4169E1;
+#newBookButton,
+#refreshButton {
+  background-color: #4169e1;
 }
-#resetButton, #addBookButton{
-  background-color: #6495ED;
+#resetButton,
+#addBookButton {
+  background-color: #6495ed;
 }
-.button{
+.button {
   display: grid;
   place-items: center;
 }
-.delete-button, .toggle-button{
+.delete-button,
+.toggle-button {
   padding: 5px 20px;
   font-size: 1.5rem;
   border-radius: 10px;
   border: 1px solid #636363;
 }
-.delete-button{
-  background-color: #1E90FF;
+.delete-button {
+  background-color: #1e90ff;
 }
-.toggle-button{
-  background-color: #9370DB;
+.toggle-button {
+  background-color: #9370db;
 }
-button{
-  cursor:pointer;
+button {
+  cursor: pointer;
 }
-button:active{
+button:active {
   transform: scale(0.98);
 }
-svg{
+svg {
   width: 16px;
   margin-left: 5px;
 }
-#addForm{
+#addForm {
   display: grid;
   gap: 15px;
   grid-template-columns: repeat(3, 1fr);
@@ -74,46 +81,47 @@ svg{
   font-size: 1.2rem;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #D6E4EC;
+  background-color: #d6e4ec;
 }
-@media only screen and (max-width: 1010px){
-  #addForm{
+@media only screen and (max-width: 1010px) {
+  #addForm {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
     max-width: 50%;
   }
 }
-fieldset{
+fieldset {
   border-radius: 5px;
   padding: 15px;
   border: 1px solid black;
 }
-legend{
-  font-weight:bold;
+legend {
+  font-weight: bold;
 }
 .radio-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
 }
-.row > input{
+.row > input {
   min-height: 25px;
 }
-.row{
+.row {
   display: flex;
   flex-direction: column;
   margin-bottom: 5px;
 }
-label{
+label {
   margin-bottom: 5px;
 }
 table {
   border-collapse: collapse;
   width: 100%;
 }
-th, td {
-border: 1px solid black;
-padding: 8px;
-text-align: left;
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
 }
