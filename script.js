@@ -141,28 +141,3 @@ let resetButton = document.getElementById('resetButton');
 resetButton.addEventListener('click', () => {
   document.getElementById('addForm').reset();
 });
-
-//get the form-element
-const form = document.querySelector('form');
-//get the inputfield of title
-const formTitle = document.getElementById('title');
-
-//get the errorspan
-const titleError = document.querySelector('#title + span.error');
-//check everytime a user types something in the title if the input is valid
-formTitle.addEventListener('input', (event) => {
-  if (formTitle.validity.valid) {
-    titleError.textContent = '';
-    titleError.className = 'error';
-    console.log(titleError);
-  } else {
-    showError();
-  }
-});
-
-function showError() {
-  if (formTitle.validity.valueMissing) {
-    titleError.textContent = 'You need to enter a title';
-  }
-  titleError.className = 'error active';
-}

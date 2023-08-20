@@ -30,17 +30,16 @@
           <div class="row">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required />
-            <span class="error" aria-live="polite"></span>
           </div>
 
           <div class="row">
             <label for="author">Author:</label>
-            <input type="text" name="author" id="author" />
+            <input type="text" name="author" id="author" required />
           </div>
 
           <div class="row">
             <label for="pages">Pages:</label>
-            <input type="text" name="pages" id="pages" />
+            <input type="text" name="pages" id="pages" required />
           </div>
 
           <fieldset>
@@ -53,6 +52,7 @@
                   id="read_yes"
                   name="read_radio"
                   value="yes"
+                  required
                 />
               </label>
               <label for="read_no"
