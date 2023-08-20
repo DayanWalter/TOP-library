@@ -10,10 +10,10 @@ class Book {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
   }
   toggleRead() {
-    if (this.read === "yes") {
-      this.read = "no";
+    if (this.read === 'yes') {
+      this.read = 'no';
     } else {
-      this.read = "yes";
+      this.read = 'yes';
     }
   }
 }
@@ -27,9 +27,9 @@ let myLibrary = [];
 // function for adding a Book-object to the library-array
 function addBookToLibrary() {
   // get values from the addForm input fields
-  let title = document.getElementById("title").value;
-  let author = document.getElementById("author").value;
-  let pages = document.getElementById("pages").value;
+  let title = document.getElementById('title').value;
+  let author = document.getElementById('author').value;
+  let pages = document.getElementById('pages').value;
   let read = document.querySelector('input[name="read_radio"]:checked').value;
 
   // create new Book-object and...
@@ -49,7 +49,7 @@ function updateIndex() {
 }
 
 // after clicking addBookButton
-addForm.addEventListener("submit", function (event) {
+addForm.addEventListener('submit', function (event) {
   // prevent default behaviour after clicking addBookButton(submit-button)
   event.preventDefault();
 
@@ -57,7 +57,7 @@ addForm.addEventListener("submit", function (event) {
   addBookToLibrary();
 });
 
-let arrayTable = document.getElementById("array-table");
+let arrayTable = document.getElementById('array-table');
 
 // function to refresh the table
 function refreshTable() {
@@ -89,12 +89,12 @@ function refreshTable() {
 
     // insert a cell with a toggle button
     let toggleCell = newRow.insertCell();
-    let toggleButton = document.createElement("button");
-    toggleButton.textContent = "Change";
-    toggleButton.className = "toggle-button";
+    let toggleButton = document.createElement('button');
+    toggleButton.textContent = 'Change';
+    toggleButton.className = 'toggle-button';
     toggleCell.appendChild(toggleButton);
 
-    toggleButton.addEventListener("click", () => {
+    toggleButton.addEventListener('click', () => {
       // invoke function on book(myLibrary[i])
       book.toggleRead();
       // refresh the table
@@ -103,12 +103,12 @@ function refreshTable() {
 
     // insert a cell with a delete button
     let deleteCell = newRow.insertCell();
-    let deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.className = "delete-button";
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.className = 'delete-button';
     deleteCell.appendChild(deleteButton);
 
-    deleteButton.addEventListener("click", () => {
+    deleteButton.addEventListener('click', () => {
       // delete element at book.index
       myLibrary.splice(book.index, 1);
       // refresh the table
@@ -118,26 +118,51 @@ function refreshTable() {
 }
 
 // refreshButton wired with function
-let refreshButton = document.getElementById("refreshButton");
-refreshButton.addEventListener("click", refreshTable);
+let refreshButton = document.getElementById('refreshButton');
+refreshButton.addEventListener('click', refreshTable);
 
 // toggle-visibility
-let newBookButton = document.getElementById("newBookButton");
+let newBookButton = document.getElementById('newBookButton');
 
 // default: display:"none"
-container.style.display = "none";
+container.style.display = 'none';
 
 // toggle Button for the "New Book"-Form
-newBookButton.addEventListener("click", () => {
-  if (container.style.display === "none") {
-    container.style.display = "block";
+newBookButton.addEventListener('click', () => {
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
   } else {
-    container.style.display = "none";
+    container.style.display = 'none';
   }
 });
 
 // resetButton for addForm
-let resetButton = document.getElementById("resetButton");
-resetButton.addEventListener("click", () => {
-  document.getElementById("addForm").reset();
+let resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', () => {
+  document.getElementById('addForm').reset();
 });
+
+//get the form-element
+const form = document.querySelector('form');
+//get the inputfield of title
+const formTitle = document.getElementById('title');
+
+//get the errorspan
+const titleError = document.querySelector('#title + span.error');
+//check everytime a user types something in the title if the input is valid
+formTitle.addEventListener('input', (event) => {
+  if (formTitle.validity.valid) {
+    titleError.textContent = '';
+    titleError.className = 'error';
+    console.log(titleError);
+  } else {
+    showError();
+  }
+});
+
+function showError() {
+  if (formTitle.validity.valueMissing) {
+    titleError.textContent = 'You need to enter a title';
+  }
+  titleError.className = 'error active';
+}
